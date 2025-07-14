@@ -1,0 +1,254 @@
+:root {
+  --fondo: #e4babc;
+  --claro: #2b2b2b;;
+  --resaltado: #2b2b2b;;
+  --borde: #2b2b2b;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: var(--fondo);
+  color: var(--claro);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+h1 {
+  animation: slideBounce 1.2s ease-out both;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #2b2b2b;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button {
+  padding: 0.7rem 1.4rem;
+  background-color: var(--claro);
+  color: var(--fondo);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: var(--resaltado);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.encabezado .logo-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+
+@keyframes slideBounce {
+  0% {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateY(15px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid var(--borde);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === === === === === === === === === === === === === === */
+/* === Estilo para páginas de ejercicios === === === === === */
+.pagina-ejercicio {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.code-block {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+  box-shadow: 0 0 10px rgba(247, 224, 37, 0.5);
+  overflow-x: auto;
+}
+
+.code-header {
+  color: #f7e025;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.code-line {
+  padding: 2px 0;
+  transition: background-color 0.2s ease;
+  font-weight: bold;
+}
+
+.code-line:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.kwd,
+.return{
+  color: #ff616e;
+}
+
+.var-name {
+  color: #c792ea;
+}
+
+.type {
+  color: #ffcb6b;
+}
+
+.func {
+  color: #82aaff;
+}
+
+.symbol {
+  color: #ffffff;
+}
+
+.arg {
+  color: #f78c6c;
+}
+
+.cuadro-click {
+  width: 400px;
+  height: 200px;
+  color: #000;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 2rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+#cuadros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+#teclas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#teclas div {
+  width: 200px;
+  height: 200px;
+  border-radius: 6px;
+}
+
+.volver-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #2b2b2b;
+  padding: 0.9rem 1.4rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.btn-volver {
+  display: inline-block;
+  background-color: var(--claro);
+  color: var(--fondo);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1.4rem;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: var(--resaltado);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cursor-luz {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 80%);
+  mix-blend-mode: screen;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: background 0.3s ease;
+}
